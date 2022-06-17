@@ -14,7 +14,7 @@ using namespace sol338;
 using namespace std;
 
 /*takeaways
-  - a ^ a = 0, so if a appears more than twice
+  - a ^ a = 0, so if a appears exactly twice
     it will be canceled out
   - [9,6,4,2,3,5,7,0,1]
   - we are builind this big expression
@@ -41,8 +41,9 @@ int Solution::missingNumber(vector<int> &nums)
      the process. It's just a placeholder
      to store the partial result
      while we are building the expression
-     - at the very end, it will store the leftover
-       , which is what matters
+     - at the very end, it will store the
+       one that appears only once, which
+       is what really matters
   */
   for (int i = 1; i <= n; i++)
     x = x ^ i ^ nums[i - 1];
